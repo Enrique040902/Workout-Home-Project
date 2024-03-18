@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Entrenamiento</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">La contraseña debe ser mayor a 6 caracteres</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="invalid_mail">Ingrese email valido</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="advertencia">Advertencia</string>
+    <string name="no_aceptar">No aceptar</string>
+    <string name="listo">Listo</string>
+</resources>

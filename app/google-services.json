@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "487568123283",
+    "project_id": "app-de-entrenamiento-e80a1",
+    "storage_bucket": "app-de-entrenamiento-e80a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487568123283:android:91fc0bcf55a9ebfcbf3466",
+        "android_client_info": {
+          "package_name": "com.example.proyectofis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487568123283-bhtgt2avreibl43ukoilaumllpesokrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBZWD5FAvXUNyhK_vL1pgi85uWlql7qiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487568123283-bhtgt2avreibl43ukoilaumllpesokrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
