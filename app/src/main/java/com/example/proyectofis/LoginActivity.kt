@@ -25,13 +25,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        Se inicializan los edit text
-//        binding.etEmail = findViewById(R.id.binding.etEmail)
-//        binding.etPassword = findViewById(R.id.binding.etPassword)
-//
-//        Se inicializan los botones
-//        btn_login = findViewById(R.id.btn_login)
-//        btn_registrar = findViewById(R.id.btn_registrar)
         firebaseAuth = FirebaseAuth.getInstance()
         val autenticacion = FirebaseAuth.getInstance()
         val user = autenticacion.currentUser

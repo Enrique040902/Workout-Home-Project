@@ -37,13 +37,10 @@ class RegistrarActivity : AppCompatActivity() {
     private var firebaseFirestore: FirebaseFirestore? = null
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrarBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
 
         // se obtiene la instacia de firebase authentication y de Firebase Firestore
@@ -70,11 +67,11 @@ class RegistrarActivity : AppCompatActivity() {
 
 
             Button(onClick = {
-                val mail = binding.etEmail.text.toString().trim{ it <= ' ' }
-                val pass = binding.etPassword.text.toString().trim{ it <= ' ' }
-                val peso = binding.etPeso.text.toString().trim{ it <= ' ' }
-                val estatura = binding.etEstatura.text.toString().trim{ it <= ' ' }
-                val edad = binding.etEdad.text.toString().trim{ it <= ' ' }
+                val mail = binding.etEmail.text.toString().trim { it <= ' ' }
+                val pass = binding.etPassword.text.toString().trim { it <= ' ' }
+                val peso = binding.etPeso.text.toString().trim { it <= ' ' }
+                val estatura = binding.etEstatura.text.toString().trim { it <= ' ' }
+                val edad = binding.etEdad.text.toString().trim { it <= ' ' }
                 if (awesomeValidation!!.validate() && camposVacios(
                         peso,
                         estatura,
@@ -98,11 +95,11 @@ class RegistrarActivity : AppCompatActivity() {
                 onDismiss = { showPopUpWarning = false },
                 onConfirm = {
 //                    showPopUpWarning = false
-                    val mail = binding.etEmail.text.toString().trim{ it <= ' ' }
-                    val pass = binding.etPassword.text.toString().trim{ it <= ' ' }
-                    val peso = binding.etPeso.text.toString().trim{ it <= ' ' }
-                    val estatura = binding.etEstatura.text.toString().trim{ it <= ' ' }
-                    val edad = binding.etEdad.text.toString().trim{ it <= ' ' }
+                    val mail = binding.etEmail.text.toString().trim { it <= ' ' }
+                    val pass = binding.etPassword.text.toString().trim { it <= ' ' }
+                    val peso = binding.etPeso.text.toString().trim { it <= ' ' }
+                    val estatura = binding.etEstatura.text.toString().trim { it <= ' ' }
+                    val edad = binding.etEdad.text.toString().trim { it <= ' ' }
                     registrarUsuario(mail, pass, peso, estatura, edad)
                     goToPrincipal()
 
@@ -174,39 +171,6 @@ class RegistrarActivity : AppCompatActivity() {
                 val errorCode = (task.exception as FirebaseAuthException?)!!.errorCode
                 giveMeErrorToast(errorCode)
             }
-        }
-    }
-
-    @Composable
-    fun WarningPopUpComponent(
-        showPopUp: Boolean,
-        onDismiss: () -> Unit,
-        onConfirm: () -> Unit
-    ) {
-        if (showPopUp) {
-            AlertDialog(
-                onDismissRequest = { onDismiss() },
-                confirmButton = {
-                    TextButton(onClick = { onConfirm() }) {
-                        Text(text = stringResource(R.string.aceptar))
-                    }
-                },
-                dismissButton = {
-                    TextButton(onClick = { onDismiss() }) {
-                        Text(text = stringResource(R.string.no_aceptar))
-                    }
-                },
-                title = {
-                    Text(text = stringResource(R.string.advertencia))
-                },
-                text = {
-                    Text(
-                        text = """ La aplicación no se hace resposable de las posibles lesiones que pueda tener
-                            ya que por su edad puede causar le daños fisicos que pueden traer seria consecuencias
-                            ¿Aún así desea ingresar?""".trimMargin()
-                    )
-                }
-            )
         }
     }
 
