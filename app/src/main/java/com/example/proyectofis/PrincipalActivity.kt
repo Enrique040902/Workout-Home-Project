@@ -276,7 +276,7 @@ class PrincipalActivity : AppCompatActivity() {
                 }
             startActivity(Intent(this@PrincipalActivity, PechoAvanzadoActivity::class.java))
         })
-        binding.btnAbdominalesAvanzado.setOnClickListener(View.OnClickListener { // Cuentar y almacenar los ejercicios hechos.
+        binding.btnAbdominalesAvanzado.setOnClickListener { // Cuentar y almacenar los ejercicios hechos.
             datos.ejercicios_realizados += 1
             val data: MutableMap<String, Any> = HashMap()
             data["ejercicios hechos"] = datos.ejercicios_realizados.toString()
@@ -301,7 +301,7 @@ class PrincipalActivity : AppCompatActivity() {
                     binding.caloriasQuemadas.text = caloriasPerdidas
                 }
             startActivity(Intent(this@PrincipalActivity, AbdominalesAvanzadoActivity::class.java))
-        })
+        }
         binding.btnBrazoAvanzado.setOnClickListener(View.OnClickListener { // Cuentar y almacenar los ejercicios hechos.
             datos.ejercicios_realizados += 1
             val data: MutableMap<String, Any> = HashMap()

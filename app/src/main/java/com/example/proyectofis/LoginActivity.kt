@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             goToHome()
                         } else {
-                            val errorCode = (task.exception as FirebaseAuthException?)!!.errorCode
+                                val errorCode = (task.exception as FirebaseAuthException?)!!.errorCode
                             darToastError(errorCode)
                         }
                     }
