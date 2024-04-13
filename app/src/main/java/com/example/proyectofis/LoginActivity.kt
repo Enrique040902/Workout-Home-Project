@@ -46,11 +46,11 @@ class LoginActivity : AppCompatActivity() {
             ".{6,}",
             R.string.invalid_password
         )
-        binding.btnRegistrar.setOnClickListener(View.OnClickListener {
+        binding.btnRegistrar.setOnClickListener {
             val i = Intent(this@LoginActivity, RegistrarActivity::class.java)
             startActivity(i)
-        })
-        binding.btnLogin.setOnClickListener(View.OnClickListener {
+        }
+        binding.btnLogin.setOnClickListener {
             val mail = binding.etEmail.text.toString()
             val pass = binding.etPassword.text.toString()
             if (awesomeValidation!!.validate() && camposVacios(mail, pass)) {
@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
             }
-        })
+        }
     } // fin del onCreate
 
     private fun goToHome() {
@@ -146,9 +146,9 @@ class LoginActivity : AppCompatActivity() {
                     "La dirección de correo electrónico ya está siendo utilizada por otra cuenta..   ",
                     Toast.LENGTH_LONG
                 ).show()
-                binding.etEmail!!.error =
+                binding.etEmail.error =
                     "La dirección de correo electrónico ya está siendo utilizada por otra cuenta."
-                binding.etEmail!!.requestFocus()
+                binding.etEmail.requestFocus()
             }
 
             "ERROR_CREDENTIAL_ALREADY_IN_USE" -> Toast.makeText(
