@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,13 +32,13 @@ fun InformacionComponent(ejercicios: String = "0", calorias: String = "0") {
             .height(200.dp)
             .clip(RoundedCornerShape(10.dp))
             .background(
-                color = colorResource(id = R.color.lightColorPrimary)
+                color = MaterialTheme.colorScheme.primary
             )
             .shadow(
                 elevation = 3.dp,
                 shape = RoundedCornerShape(10.dp),
-                ambientColor = colorResource(id = R.color.lightColorPrimary),
-                spotColor = colorResource(id = R.color.colorPrimaryVariant)
+                ambientColor = MaterialTheme.colorScheme.primary,
+                spotColor = MaterialTheme.colorScheme.primary
             )
     ) {
         // Ejercicios realizados

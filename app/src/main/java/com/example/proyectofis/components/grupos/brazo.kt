@@ -46,7 +46,7 @@ fun BrazoComponent(modifier: Modifier = Modifier) {
             .shadow(
                 elevation = 4.dp,
                 shape = RoundedCornerShape(8.dp),
-                spotColor = colorResource(id = R.color.colorPrimaryVariant)
+                spotColor = colorResource(id = R.color.lightColorPrimary)
             )
             .background(
                 colorResource(id = R.color.lightColorPrimary),
