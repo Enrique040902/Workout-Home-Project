@@ -38,11 +38,10 @@ private fun MenuComponent(){
 
 
 @Composable
-fun AbsComponent() {
+fun AbsComponent(modifier: Modifier = Modifier) {
     Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(120.dp)
+        modifier = modifier
+            .fillMaxSize()
             .shadow(
                 elevation = 4.dp,
                 shape = RoundedCornerShape(8.dp),
@@ -58,7 +57,7 @@ fun AbsComponent() {
         ImageAbsComponent()
 
         Text(
-            text = "Abdominales",
+            text = "Abs",
             style = TextStyle(
                 fontSize = 38.sp,
                 color = Color.DarkGray,

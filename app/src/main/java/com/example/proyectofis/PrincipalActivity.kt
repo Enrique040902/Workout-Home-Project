@@ -28,6 +28,8 @@ class PrincipalActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         val id = mAuth!!.currentUser!!.uid
 
+
+
         // Acciones para los botones de nivel principiante
         binding.btnPechoPrincipiante.setOnClickListener(View.OnClickListener { // Contar y almacenar los ejercicios hechos.
             datos.ejercicios_realizados += 1
