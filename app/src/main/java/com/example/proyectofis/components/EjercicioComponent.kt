@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.example.proyectofis.R
 
 @Composable
-fun InformacionComponent(ejercicios: String = "0", calorias: String = "0") {
+fun EjercicioComponent(ejercicios: String = "0", calorias: String = "0") {
     Row(
         modifier = Modifier
             .padding(16.dp)
@@ -32,13 +32,13 @@ fun InformacionComponent(ejercicios: String = "0", calorias: String = "0") {
             .height(200.dp)
             .clip(RoundedCornerShape(10.dp))
             .background(
-                color = MaterialTheme.colorScheme.primary
+                color = colorResource(id = R.color.lightColorPrimary)
             )
             .shadow(
                 elevation = 3.dp,
                 shape = RoundedCornerShape(10.dp),
-                ambientColor = MaterialTheme.colorScheme.primary,
-                spotColor = MaterialTheme.colorScheme.primary
+                ambientColor = colorResource(id = R.color.lightColorPrimary),
+                spotColor = colorResource(id = R.color.lightColorPrimary)
             )
     ) {
         // Ejercicios realizados

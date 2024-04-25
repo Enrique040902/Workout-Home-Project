@@ -14,4 +14,7 @@
     <string name="advertencia">Advertencia</string>
     <string name="no_aceptar">No aceptar</string>
     <string name="listo">Listo</string>
+    <string name="principiante">Principiante</string>
+    <string name="intermedio">Intermedio</string>
+    <string name="avanzado">Avanzado</string>
 </resources>

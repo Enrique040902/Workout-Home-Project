@@ -13,7 +13,7 @@ import com.example.proyectofis.R
 import com.example.proyectofis.components.NivelComponent
 
 @Composable
-fun PechoMenuComponent(){
+fun BrazoMenuComponent(){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -44,6 +44,6 @@ fun PechoMenuComponent(){
 
 @Preview(showSystemUi = true)
 @Composable
-fun PechoMenuComponentPreview(){
-    PechoMenuComponent()
+fun BrazoMenuComponentPreview(){
+    BrazoMenuComponent()
 }

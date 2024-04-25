@@ -10,10 +10,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -34,8 +36,10 @@ fun RutinaComponent(
             .fillMaxWidth()
             .height(100.dp)
             .background(
-                color = colorResource(id = R.color.lightColorPrimary)
+                color = colorResource(id = R.color.lightColorPrimary),
+                shape = RoundedCornerShape(5.dp)
             )
+            .clip(RoundedCornerShape(10.dp))
     ) {
         Image(
             painter = painterResource(id = imageId),
@@ -70,7 +74,7 @@ fun RutinaComponent(
 fun RutinaComponentPreview() {
     RutinaComponent(
         imageId = R.drawable.brazo,
-        rutina = "Rutinas de brazon",
+        rutina = "Rutinas de brazo",
         reps = "20 repeticiones"
     )
 }
