@@ -58,7 +58,7 @@
                     android:id="@+id/imgeSaltoTijera"
                     android:layout_width="99dp"
                     android:layout_height="99dp"
-                    app:srcCompat="@drawable/principiante1" />
+                    app:srcCompat="@drawable/saltos_de_tijera" />
 
                 <TextView
                     android:id="@+id/textView9"

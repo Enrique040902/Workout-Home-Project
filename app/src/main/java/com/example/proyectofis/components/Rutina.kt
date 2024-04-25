@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -34,17 +35,18 @@ fun RutinaComponent(
         modifier = Modifier
             .padding(8.dp)
             .fillMaxWidth()
-            .height(100.dp)
+//            .height(100.dp)
             .background(
                 color = colorResource(id = R.color.lightColorPrimary),
                 shape = RoundedCornerShape(5.dp)
             )
-            .clip(RoundedCornerShape(10.dp))
     ) {
         Image(
             painter = painterResource(id = imageId),
             contentDescription = null,
-            modifier = Modifier.size(100.dp)
+            modifier = Modifier
+                .padding(8.dp)
+                .size(100.dp)
         )
         Column(
             modifier = Modifier
@@ -63,6 +65,7 @@ fun RutinaComponent(
                 text = reps,
                 style = TextStyle(
                     fontSize = 18.sp,
+                    color = Color.Gray
                 )
             )
         }
