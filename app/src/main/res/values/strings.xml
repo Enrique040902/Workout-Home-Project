@@ -23,4 +23,7 @@
     <string name="perdida_aprox_pecho_intermedio">Perdida aprox. de 29.9 Kcal</string>
     <string name="nivel_avanzado">Nivel: Avanzado</string>
     <string name="perdida_aprox_pecho_avanzado">Perdida aprox. de 30.9 Kcal</string>
+    <string name="perdida_aprox_de_64_kcal">Perdida aprox. de 64 Kcal</string>
+    <string name="perdida_aprox_de_68_kcal">Perdida aprox. de 68 kcal</string>
+    <string name="perdida_aprox_de_74_kcal">Perdida aprox. de 74 Kcal</string>
 </resources>
