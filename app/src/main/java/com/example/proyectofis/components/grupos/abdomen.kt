@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,7 +22,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.proyectofis.R
+import com.example.proyectofis.navigation.AppScreens
 
 @Composable
 private fun MenuComponent(){
@@ -31,13 +32,13 @@ private fun MenuComponent(){
         modifier = Modifier
             .padding(16.dp)
     ) {
-        AbsComponent()
+//        AbsComponent(navController = navController)
     }
 }
 
 
 @Composable
-fun AbsComponent(modifier: Modifier = Modifier) {
+fun AbsComponent(modifier: Modifier = Modifier, navController: NavHostController) {
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -50,7 +51,7 @@ fun AbsComponent(modifier: Modifier = Modifier) {
                 color = colorResource(id = R.color.lightColorPrimary),
                 shape = RoundedCornerShape(8.dp)
             )
-            .clickable { /* TODO */ },
+            .clickable { navController.navigate(route = AppScreens.AbsMenuScreen.route) },
         contentAlignment = Alignment.Center
     ) {
         ImageAbsComponent()
@@ -82,7 +83,7 @@ private fun ImageAbsComponent() {
 @Preview
 @Composable
 private fun AbsComponentPreview() {
-    AbsComponent()
+//    AbsComponent(navController = navController)
 }
 
 @Preview(showSystemUi = true)

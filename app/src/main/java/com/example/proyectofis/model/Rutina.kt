@@ -1,4 +1,4 @@
-package com.example.proyectofis
+package com.example.proyectofis.model
 
 data class Rutina(
     val imageId: Int,

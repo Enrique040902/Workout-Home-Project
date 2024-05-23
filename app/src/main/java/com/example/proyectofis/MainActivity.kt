@@ -9,10 +9,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.proyectofis.screens.pecho.PechoPrincipianteComponent
+import com.example.proyectofis.navigation.AppNavigation
+import com.example.proyectofis.navigation.AppScreens
+import com.example.proyectofis.screens.login.LoginScreen
+import com.example.proyectofis.screens.login.LoginViewModel
+import com.example.proyectofis.screens.registro.RegistroScreen
+import com.example.proyectofis.screens.registro.RegistroViewModel
 import com.example.proyectofis.ui.theme.PROYECTOFISTheme
 
-class PechoPrincipianteActivity : ComponentActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -21,23 +26,16 @@ class PechoPrincipianteActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    PechoPrincipianteComponent()
+//                    LoginScreen(viewModel = LoginViewModel())
+                    AppNavigation()
                 }
             }
         }
-
     }
+}
 
-    @Preview
-    @Composable
-    private fun PechoPrincipianteActivityPreview() {
-        PROYECTOFISTheme {
-            Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background
-            ) {
-                PechoPrincipianteComponent()
-            }
-        }
-    }
+@Preview
+@Composable
+private fun MainActivityPreview() {
+    AppNavigation()
 }

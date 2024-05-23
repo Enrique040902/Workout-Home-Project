@@ -4,24 +4,24 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import com.example.proyectofis.components.EjercicioComponent
 import com.example.proyectofis.components.MenuComponent
 
 @Composable
-fun PantallaPrincipalComponent() {
+fun PrincipalScreen(navController: NavHostController) {
 
     Column(
         modifier = Modifier
             .fillMaxSize()
     ) {
         EjercicioComponent()
-        MenuComponent()
+        MenuComponent(navController)
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-fun PantallaPrincipalComponentPreview() {
-    PantallaPrincipalComponent()
-}
+//@Preview(showSystemUi = true)
+//@Composable
+//fun PantallaPrincipalComponentPreview() {
+//    PrincipalScreen(navController)
+//}

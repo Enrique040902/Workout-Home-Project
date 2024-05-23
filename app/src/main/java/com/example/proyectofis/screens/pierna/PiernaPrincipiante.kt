@@ -16,13 +16,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.proyectofis.R
-import com.example.proyectofis.Rutina
+import com.example.proyectofis.model.Rutina
 import com.example.proyectofis.components.RutinaComponent
-import com.example.proyectofis.screens.brazo.BrazoPrincipianteComponent
 
 @Composable
-fun PiernaPrincipianteComponent() {
+fun PiernaPrincipianteScreen(navController: NavController) {
 
     val rutinas = listOf(
         Rutina(
@@ -155,5 +155,5 @@ fun PiernaPrincipianteComponent() {
 @Preview(showSystemUi = true)
 @Composable
 fun PiernaPrincipianteComponentPreview() {
-    PiernaPrincipianteComponent()
+//    PiernaPrincipianteScreen()
 }

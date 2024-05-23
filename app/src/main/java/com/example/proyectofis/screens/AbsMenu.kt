@@ -9,11 +9,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.proyectofis.R
 import com.example.proyectofis.components.NivelComponent
+import com.example.proyectofis.navigation.AppScreens
 
 @Composable
-fun AbsMenuComponent(){
+fun AbsMenuScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -22,21 +24,21 @@ fun AbsMenuComponent(){
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { /* TODO */ },
+                .clickable { navController.navigate(route = AppScreens.AbsPrincipinateScreen.route) },
             title = stringResource(R.string.principiante)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { /* TODO */ },
+                .clickable { navController.navigate(route = AppScreens.AbsIntermedioScreen.route) },
             title = stringResource(R.string.intermedio)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { /* TODO */ },
+                .clickable { navController.navigate(route = AppScreens.AbsAvanzadoScreen.route) },
             title = stringResource(R.string.avanzado)
         )
     }
@@ -44,6 +46,6 @@ fun AbsMenuComponent(){
 
 @Preview(showSystemUi = true)
 @Composable
-fun AbsMenuComponentPreview(){
-    AbsMenuComponent()
+fun AbsMenuComponentPreview() {
+//    AbsMenuComponent(navController)
 }

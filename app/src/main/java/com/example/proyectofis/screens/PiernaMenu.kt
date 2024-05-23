@@ -9,11 +9,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.proyectofis.R
 import com.example.proyectofis.components.NivelComponent
+import com.example.proyectofis.navigation.AppScreens
 
 @Composable
-fun PiernaMenuComponent(){
+fun PiernaMenuScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -22,21 +24,21 @@ fun PiernaMenuComponent(){
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { /* TODO */ },
+                .clickable { navController.navigate(route = AppScreens.PiernaPrincipianteScreen.route) },
             title = stringResource(R.string.principiante)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { /* TODO */ },
+                .clickable { navController.navigate(route = AppScreens.PiernaIntermedioScreen.route) },
             title = stringResource(R.string.intermedio)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { /* TODO */ },
+                .clickable { navController.navigate(route = AppScreens.PiernaAvanzadoScreen.route)},
             title = stringResource(R.string.avanzado)
         )
     }
@@ -45,5 +47,5 @@ fun PiernaMenuComponent(){
 @Preview(showSystemUi = true)
 @Composable
 fun PiernaMenuComponentPreview(){
-    PiernaMenuComponent()
+//    PiernaMenuComponent(navController)
 }

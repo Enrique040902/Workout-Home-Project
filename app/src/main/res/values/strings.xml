@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Entrenamiento</string>
+    <string name="app_name">Workout Home</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -26,4 +26,13 @@
     <string name="perdida_aprox_de_64_kcal">Perdida aprox. de 64 Kcal</string>
     <string name="perdida_aprox_de_68_kcal">Perdida aprox. de 68 kcal</string>
     <string name="perdida_aprox_de_74_kcal">Perdida aprox. de 74 Kcal</string>
+    <string name="ingrese_su_email">Ingrese su email</string>
+    <string name="ingrese_su_password">Ingrese su contraseña</string>
+    <string name="registrate">REGISTRATE</string>
+    <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
+    <string name="ingrese_su_estatura">Ingrese su estatura</string>
+    <string name="ingrese_su_peso">Ingrese su peso</string>
+    <string name="ingrese_su_edad">Ingrese su edad</string>
+    <string name="registrate2">Registrate</string>
+    <string name="peso_estatura">Ingresa tu peso y tu estatura</string>
 </resources>
