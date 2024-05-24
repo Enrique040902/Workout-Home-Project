@@ -2,6 +2,10 @@ package com.example.proyectofis.screens.registro
 
 import android.util.Log
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,7 +37,10 @@ class PesoEstaturaViewModel : ViewModel() {
     private val _buttonEnable = MutableLiveData<Boolean>()
     val buttonEnable: LiveData<Boolean> = _buttonEnable
 
-    var showPopUpWarning = MutableLiveData(false)
+//    private val _showPopUpWarning = MutableLiveData<Boolean>()
+//    val showPopUpWarning: LiveData<Boolean> = _showPopUpWarning
+
+    var showAlert = mutableStateOf(false)
 
     fun onRegisterChanged(
         estatura: String,
@@ -47,22 +54,31 @@ class PesoEstaturaViewModel : ViewModel() {
     }
 
     fun onButtonEnable(navController: NavController) {
-        val edadInt = _edad.value?.toInt()
-
-        if (edadInt != null && edadInt >= 60) {
-            showPopUpWarning.value = true
-            Log.d("PE", "${showPopUpWarning.value} Edad: ${_edad.value}")
-
+        if (isSenior()) {
+            Log.d("PE", "${showAlert.value} Edad: ${_edad.value}")
+            showAlert.value = true
         }
-//        else {
-//            saveData(
-//                estatura = _estatura.value.toString(),
-//                peso = _peso.value.toString(),
-//                edad = _edad.value.toString()
-//            ) {
-//                navController.navigate(AppScreens.PrincipalScreen.route)
-//            }
-//        }
+        else {
+            saveDataAndNavigate(navController)
+        }
+    }
+
+    private fun isSenior(): Boolean {
+        return (_edad.value?.toIntOrNull() ?: 0) >= 60
+    }
+
+    fun onConfirmDialog(navController: NavController) {
+        saveDataAndNavigate(navController)
+    }
+
+    private fun saveDataAndNavigate(navController: NavController) {
+        saveData(
+            estatura = _estatura.value.toString(),
+            peso = _peso.value.toString(),
+            edad = _edad.value.toString()
+        ) {
+            navController.navigate(AppScreens.PrincipalScreen.route)
+        }
     }
 
     private fun saveData(estatura: String, peso: String, edad: String, principal: () -> Unit) =

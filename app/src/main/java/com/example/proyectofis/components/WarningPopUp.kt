@@ -31,12 +31,9 @@ fun WarningPopUpComponent(
             },
             text = {
                 Text(
-                    text = """
-                    La aplicación no se hace resposable de las posibles lesiones que pueda tener
-                    ya que por su edad puede causar le daños fisicos que pueden traer seria consecuencias
-                    
-                    ¿Aún así desea ingresar?
-                """.trimMargin()
+                    text = """La aplicación no se hace responsable de las posibles lesiones que pueda tener
+                            ya que por su edad puede causarle daños fisicos que pueden traer serias consecuencias""" +
+                            "\n¿Aún así desea ingresar a la aplicación?"
                 )
             }
         )

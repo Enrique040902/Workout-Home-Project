@@ -21,6 +21,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -63,7 +66,6 @@ fun PesoEstaturaComponent(
     val peso: String by viewModel.peso.observeAsState(initial = "")
     val edad: String by viewModel.edad.observeAsState(initial = "")
     val buttonEnable: Boolean by viewModel.buttonEnable.observeAsState(false)
-    val showPopUpWarning = viewModel.showPopUpWarning
 
     Column(
         modifier = modifier
@@ -90,9 +92,12 @@ fun PesoEstaturaComponent(
                 viewModel.onButtonEnable(navController)
             }
             WarningPopUpComponent(
-                showPopUp = showPopUpWarning.value!!,
-                onDismiss = { showPopUpWarning.value = false },
-                onConfirm = { showPopUpWarning.value = false }
+                showPopUp = viewModel.showAlert.value,
+                onDismiss = { viewModel.showAlert.value = false },
+                onConfirm = {
+                    viewModel.showAlert.value = false
+                    viewModel.onConfirmDialog(navController)
+                }
             )
         }
     }
