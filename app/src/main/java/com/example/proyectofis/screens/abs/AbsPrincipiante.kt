@@ -24,6 +24,7 @@ import com.example.proyectofis.R
 import com.example.proyectofis.components.MainButton
 import com.example.proyectofis.components.RutinaComponent
 import com.example.proyectofis.model.Rutina
+import com.example.proyectofis.navigation.AppScreens
 
 @Composable
 fun AbsPrincipianteScreen(
