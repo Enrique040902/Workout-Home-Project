@@ -1,4 +1,4 @@
-package com.example.proyectofis.screens
+package com.example.proyectofis.screens.menus
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

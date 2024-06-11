@@ -6,6 +6,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,11 +21,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.proyectofis.R
-import com.example.proyectofis.model.Rutina
+import com.example.proyectofis.components.MainButton
 import com.example.proyectofis.components.RutinaComponent
+import com.example.proyectofis.model.Rutina
 
 @Composable
-fun AbsPrincipianteScreen(navController: NavController) {
+fun AbsPrincipianteScreen(
+    navController: NavController,
+    viewModel: AbsPrincipianteViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+) {
 
     val rutinas = listOf(
         Rutina(
@@ -121,12 +128,31 @@ fun AbsPrincipianteScreen(navController: NavController) {
             modifier = Modifier
                 .padding(8.dp)
         ) {
-            items(rutinas) {rutina ->
+            items(rutinas) { rutina ->
                 RutinaComponent(
                     imageId = rutina.imageId,
                     rutina = rutina.rutina,
                     reps = rutina.reps
                 )
+            }
+            item {
+                Button(
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer
+                    ),
+                    onClick = {
+                        viewModel.updateExerciseData(calories = 27.9)
+                    }
+                ) {
+                    Text(
+                        text = "Completado",
+                        fontSize = 20.sp,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
             }
         }
     }

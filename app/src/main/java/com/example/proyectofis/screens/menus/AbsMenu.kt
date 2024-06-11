@@ -1,4 +1,4 @@
-package com.example.proyectofis.screens
+package com.example.proyectofis.screens.menus
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -15,30 +15,33 @@ import com.example.proyectofis.components.NivelComponent
 import com.example.proyectofis.navigation.AppScreens
 
 @Composable
-fun AbsMenuScreen(navController: NavController) {
+fun AbsMenuScreen(
+    navController: NavController
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
     ) {
+
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { navController.navigate(route = AppScreens.AbsPrincipinateScreen.route) },
+                .clickable { navController.navigate(AppScreens.AbsPrincipinateScreen.route) },
             title = stringResource(R.string.principiante)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { navController.navigate(route = AppScreens.AbsIntermedioScreen.route) },
+                .clickable { navController.navigate(AppScreens.AbsIntermedioScreen.route) },
             title = stringResource(R.string.intermedio)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { navController.navigate(route = AppScreens.AbsAvanzadoScreen.route) },
+                .clickable { navController.navigate(AppScreens.AbsAvanzadoScreen.route) },
             title = stringResource(R.string.avanzado)
         )
     }

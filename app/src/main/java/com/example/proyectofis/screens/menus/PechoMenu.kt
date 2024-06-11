@@ -1,4 +1,4 @@
-package com.example.proyectofis.screens
+package com.example.proyectofis.screens.menus
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -15,7 +15,7 @@ import com.example.proyectofis.components.NivelComponent
 import com.example.proyectofis.navigation.AppScreens
 
 @Composable
-fun BrazoMenuScreen(navController: NavController) {
+fun PechoMenuScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -24,21 +24,21 @@ fun BrazoMenuScreen(navController: NavController) {
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { navController.navigate(route = AppScreens.BrazoPrincipianteScreen.route) },
+                .clickable { navController.navigate(route = AppScreens.PechoPrincipianteScreen.route) },
             title = stringResource(R.string.principiante)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { navController.navigate(route = AppScreens.BrazoIntermediocreen.route) },
+                .clickable { navController.navigate(route = AppScreens.PechoIntermedioScreen.route) },
             title = stringResource(R.string.intermedio)
         )
         NivelComponent(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(1f)
-                .clickable { navController.navigate(route = AppScreens.BrazoAvanzadoScreen.route) },
+                .clickable { navController.navigate(route = AppScreens.PechoAvanzadoScreen.route) },
             title = stringResource(R.string.avanzado)
         )
     }
@@ -46,6 +46,6 @@ fun BrazoMenuScreen(navController: NavController) {
 
 @Preview(showSystemUi = true)
 @Composable
-fun BrazoMenuComponentPreview() {
-//    BrazoMenuComponent()
+fun PechoMenuComponentPreview() {
+//    PechoMenuComponent()
 }

@@ -1,18 +1,17 @@
 package com.example.proyectofis.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.internal.composableLambda
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.proyectofis.screens.AbsMenuScreen
-import com.example.proyectofis.screens.BrazoMenuScreen
-import com.example.proyectofis.screens.PechoMenuScreen
-import com.example.proyectofis.screens.PiernaMenuScreen
+import com.example.proyectofis.screens.PrincipalViewModel
+import com.example.proyectofis.screens.menus.AbsMenuScreen
+import com.example.proyectofis.screens.menus.BrazoMenuScreen
+import com.example.proyectofis.screens.menus.PechoMenuScreen
+import com.example.proyectofis.screens.menus.PiernaMenuScreen
 import com.example.proyectofis.screens.PrincipalScreen
 import com.example.proyectofis.screens.SplashScreen
 import com.example.proyectofis.screens.abs.AbsAvanzadoScreen
-import com.example.proyectofis.screens.abs.AbsIntermedioComponentPreview
 import com.example.proyectofis.screens.abs.AbsIntermedioScreen
 import com.example.proyectofis.screens.abs.AbsPrincipianteScreen
 import com.example.proyectofis.screens.brazo.BrazoIntermedioScreen
@@ -24,9 +23,7 @@ import com.example.proyectofis.screens.pecho.PechoIntermedioScreen
 import com.example.proyectofis.screens.pecho.PechoPrincipianteScreen
 import com.example.proyectofis.screens.pierna.PiernaAvanzadoScreen
 import com.example.proyectofis.screens.pierna.PiernaPrincipianteScreen
-import com.example.proyectofis.screens.registro.PesoEstaturaComponent
 import com.example.proyectofis.screens.registro.PesoEstaturaScreen
-import com.example.proyectofis.screens.registro.PesoEstaturaViewModel
 import com.example.proyectofis.screens.registro.RegistroScreen
 import com.example.proyectofis.screens.registro.RegistroViewModel
 
@@ -50,7 +47,7 @@ fun AppNavigation() {
             PesoEstaturaScreen(navController = navController)
         }
         composable(route = AppScreens.PrincipalScreen.route) {
-            PrincipalScreen(navController)
+            PrincipalScreen(navController, PrincipalViewModel())
         }
 
         // Navegación para pecho

@@ -51,11 +51,11 @@ fun EjercicioComponent(ejercicios: String = "0", calorias: String = "0") {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-
                 text = ejercicios,
                 style = TextStyle(
                     fontSize = 20.sp,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = MaterialTheme.colorScheme.primary
                 )
             )
             Text(
@@ -64,7 +64,8 @@ fun EjercicioComponent(ejercicios: String = "0", calorias: String = "0") {
                 text = "Ejercicios realizados",
                 style = TextStyle(
                     fontSize = 20.sp,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = MaterialTheme.colorScheme.primary
                 )
             )
         }
@@ -82,7 +83,8 @@ fun EjercicioComponent(ejercicios: String = "0", calorias: String = "0") {
                 text = calorias,
                 style = TextStyle(
                     fontSize = 20.sp,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = MaterialTheme.colorScheme.primary
                 )
             )
             Text(
@@ -91,7 +93,8 @@ fun EjercicioComponent(ejercicios: String = "0", calorias: String = "0") {
                 text = "Calorias quemadas aprox.",
                 style = TextStyle(
                     fontSize = 20.sp,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = MaterialTheme.colorScheme.primary
                 )
             )
         }
