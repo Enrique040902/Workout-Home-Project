@@ -45,9 +45,28 @@ class AbsPrincipianteViewModel : ViewModel() {
                 .addOnSuccessListener {
                 }
                 .addOnFailureListener { e ->
-                    // Handle failure, e.g., show an error message to the user
                     Log.d("AbsMenu", "Error ${e.message}")
                 }
+        }
+    }
+
+    fun getEjerciciosYCalorias() {
+        val user = auth.currentUser
+        if (user != null) {
+            val docRef =
+                db.collection("users")
+                    .document(user.uid)
+                    .collection("Datos de los ejercicios")
+                    .document("ejercicios")
+            docRef.addSnapshotListener { snapshot, e ->
+                if (e != null) {
+                    Log.d("absprincipiante", "Error ${e.message}")
+                } else if (snapshot != null && snapshot.exists()) {
+                    ejercicioRealizados.value = snapshot.getLong("ejercicios realizado")!!.toInt()
+                    caloriasQuemadas.value = snapshot.getDouble("calorias quemadas")!!
+                    Log.d("absprincipiante", "datos ${ejercicioRealizados.value} - ${caloriasQuemadas.value}")
+                }
+            }
         }
     }
 }
